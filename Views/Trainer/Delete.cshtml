@@ -1,0 +1,31 @@
+@model MyASPApp.Models.Trainer;
+@{
+    ViewData["Title"] = "Delete Trainer";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Apakah anda yakin untuk mendelete data ini ?</h3>
+        <hr/>
+        <dl class="row">
+            <dt class="col-sm-2">
+                <label>Nama :</label>
+            </dt>
+            <div class="col-sm-19">
+                @Model.Name
+            </div>
+             <dt class="col-sm-2">
+                <label>Expertise :</label>
+            </dt>
+            <div class="col-sm-19">
+                @Model.Expertise
+            </div>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="submit" value="Delete" class="btn btn-sm btn-danger" /><br/>
+            <a asp-action="GetAllTrainer">Kembali ke List</a>
+        </form>
+    </div>
+</div>

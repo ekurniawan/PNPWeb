@@ -1,0 +1,40 @@
+@{
+    Layout = null;
+
+    double bil1 = 5;
+    double bil2 = 8;
+    double hasil = bil1 * bil2;
+
+    List<string> lstTrainer = (List<string>)ViewData["lstTrainer"];
+}
+
+<h1>Daftar Trainer</h1>
+<p>Hasil @bil1 x @bil2 = @hasil</p>
+<div>
+    <ul>
+        <li>@ViewData["trainer1"]</li>
+        <li>@ViewData["trainer2"]</li>
+        <li>Scott Hanselman</li>
+    </ul>
+</div>
+<hr />
+<h2>List Trainer</h2>
+<div>
+    <ul>
+        @foreach (var trainer in lstTrainer)
+        {
+            <li>@trainer</li>
+        }
+    </ul>
+</div>
+<hr/>
+<h2>Course</h2>
+<p>Course yang diambil: @ViewBag.Course</p>
+<div>
+    <ul>
+        @foreach (string course in ViewBag.Courses)
+        {
+            <li>@course</li>
+        }
+    </ul>
+</div>
