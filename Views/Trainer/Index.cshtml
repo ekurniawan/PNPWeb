@@ -1,8 +1,16 @@
 @{
-    Layout = null;
-
+    Layout = "_LayoutStartBootstrap";
 }
 
-<h2>Daftar Trainer</h2>
-
-<p>Daftar Trainer yang ada : @ViewData["nama"], anda mengajar course: @ViewData["course"] </p>
+<h1 class="mt-4">@ViewData["Judul"]</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Homepage</a></li>
+    <li class="breadcrumb-item active">Homepage</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="mb-0">
+           Welcome to ASP.NET Core Bootcamp
+        </p>
+    </div>
+</div>

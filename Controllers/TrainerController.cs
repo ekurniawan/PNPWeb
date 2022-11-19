@@ -21,10 +21,9 @@ namespace MyASPApp.Controllers
             _trainer = trainer;
         }
 
-        public IActionResult Index(string nama,string course)
+        public IActionResult Index()
         {
-            ViewData["nama"] = nama;
-            ViewData["course"] = course;
+            ViewData["Judul"] = "Welcome Page";
             return View();
         }
 

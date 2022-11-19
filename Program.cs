@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using MyASPApp.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,8 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//mendaftarkan EF
+builder.Services.AddDbContext<AppDbContext>(
+    options=>options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+
 //menggunakan DI
-builder.Services.AddSingleton<ITrainer,InMemoryTrainer>();
+builder.Services.AddTransient<ITrainer,TrainerDAL>();
 
 var app = builder.Build();
 
